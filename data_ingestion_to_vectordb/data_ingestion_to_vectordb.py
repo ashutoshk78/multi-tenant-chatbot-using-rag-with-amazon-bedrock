@@ -8,6 +8,7 @@ from langchain.indexes.vectorstore import VectorStoreIndexWrapper
 from langchain.embeddings import BedrockEmbeddings
 from langchain.llms.bedrock import Bedrock
 from langchain.vectorstores import FAISS
+from langchain_community.document_loaders import PyPDFLoader
 
 LOCAL_RAG_DIR="data"
 FAISS_INDEX_DIR = "faiss_index"
@@ -23,11 +24,11 @@ TENANTS=["tenanta", "tenantb"]
 
 for t in TENANTS:
     if t == "tenanta":
-        DATAFILE="Amazon_SageMaker_FAQs.csv"
+        DATAFILE="Smart Subscription for CT Scanner Installation Manual_SM_5826427-1EN_1.pdf"
     elif t == "tenantb":
-        DATAFILE="Amazon_EMR_FAQs.csv"
+        DATAFILE="Two Phase UPS Installation Manual_IM_5821322-1EN_4.pdf"
 
-    loader = CSVLoader(f"./{LOCAL_RAG_DIR}/{DATAFILE}")
+    loader = PyPDFLoader(f"./{LOCAL_RAG_DIR}/{DATAFILE}")
     documents_aws = loader.load()
     print(f"documents:loaded:size={len(documents_aws)}")
     
