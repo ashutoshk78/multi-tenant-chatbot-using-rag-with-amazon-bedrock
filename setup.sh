@@ -156,10 +156,10 @@ do
   
   if [ "${t}" == "tenanta" ]
   then
-      aws s3 cp data/"Smart Subscription for CT Scanner Installation Manual_SM_5826427-1EN_1.pdf" s3://contextual-data-${t}-${RANDOM_STRING}
+      aws s3 cp data/SmartSubscriptionforCT.pdf s3://contextual-data-${t}-${RANDOM_STRING}
   elif [ "${t}" == "tenantb" ]
   then
-      aws s3 cp data/"Two Phase UPS Installation Manual_IM_5821322-1EN_4.pdf" s3://contextual-data-${t}-${RANDOM_STRING}
+      aws s3 cp data/UPSInstallation.pdf s3://contextual-data-${t}-${RANDOM_STRING}
   fi
   
   echo "S3 access policy for ${t}"
