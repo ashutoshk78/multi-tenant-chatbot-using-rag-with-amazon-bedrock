@@ -24,9 +24,9 @@ TENANTS=["tenanta", "tenantb"]
 
 for t in TENANTS:
     if t == "tenanta":
-        DATAFILE="SmartSubscriptionforCT.pdf"
+        DATAFILE="CTSmartDelivery.pdf"
     elif t == "tenantb":
-        DATAFILE="UPSInstallation.pdf"
+        DATAFILE="ApplicationTip.pdf"
 
     loader = PyPDFLoader(f"./{LOCAL_RAG_DIR}/{DATAFILE}")
     documents_aws = loader.load()
